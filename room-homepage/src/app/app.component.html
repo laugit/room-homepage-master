@@ -16,43 +16,70 @@
         <div id="seccontent" class="container-fluid">
           <div>
             <h2 id="secondheader">
-              <p>Discover innovative ways to decorate</p>
+              <p>{{secondContent[contentnumber].header}}</p>
             </h2>
           </div>
           <br />
           <div></div>
           <p id="description">
-            We provide unmatched quality, comfort, and style for property owners across the country.
-            Our experts combine form and function in bringing your vision to life. Create a room in your
-            own style with our collection and make your property a reflection of you and what you love.
+            {{secondContent[contentnumber].description}}
           </p>
-          <div class="row">
+          <a href="#" id="shopnowdiv" class="row">
             <div class="col-sm-5">
               <h6>
                 <b>
-                  <pre>S H O P  N O W</pre>
+                  <pre>S H O P   N O W</pre>
                 </b>
               </h6>
             </div>
             <div class="col-sm-1">
-              <img src="../assets/images/icon-arrow.svg">
+              <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+                  fill="#000" fill-rule="nonzero" />
+              </svg>
             </div>
-          </div>
+          </a>
         </div>
         <div id="seccontentarrows" class="container-fluid row">
-          <div id="divarrowleft">
+          <a href="#" id="divarrowleft" (click)="goToPreviousPage()">
             <img id="arrowleft" src="../assets/images/icon-angle-left.svg">
-          </div>
-          <div id="divarrowright">
+          </a>
+          <a href="#" id="divarrowright" (click)="goToNextPage()">
             <img id="arrowright" src="../assets/images/icon-angle-right.svg">
-          </div>
+          </a>
         </div>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="1">3</mat-grid-tile>
+    <mat-grid-tile id="thirdquarter" colspan="3" rowspan="1"></mat-grid-tile>
     <mat-grid-tile colspan="4" rowspan="1">
-      <p class="bg-danger">4</p>
+      <div id="thirdcontent">
+        <div class="row">
+          <div id="aboutcol" class="col">
+            <b>
+              A B O U T
+            </b>
+          </div>
+          <div id="ourcol" class="col">
+            <b>
+              O U R
+            </b>
+          </div>
+          <div id="furniturecol" class="col">
+            <b>
+              F U R N I T U R E
+            </b>
+          </div>
+        </div>
+        <p class="row w-100"></p>
+        <p id="thirddescr">
+          Our multifunctional collection blends design and function to suit your individual taste.
+          Make each room unique, or pick a cohesive theme that best express your interests and what
+          inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+          or anything in between. Product specialists are available to help you create your dream space.
+        </p>
+      </div>
     </mat-grid-tile>
-    <mat-grid-tile colspan="3" rowspan="1">5</mat-grid-tile>
+    <mat-grid-tile id="fifthquarter" colspan="3" rowspan="1"></mat-grid-tile>
   </mat-grid-list>
 </div>
