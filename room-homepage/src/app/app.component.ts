@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'room-homepage';
   pagenb = 1;
   contentnumber = 0;
+  imageType = '';
 
   secondContent = [
     {
@@ -32,7 +33,6 @@ export class AppComponent {
     if (this.pagenb !== 1) {
       this.pagenb--;
       this.contentnumber--;
-      this.renderPage();
     }
   }
 
@@ -40,12 +40,43 @@ export class AppComponent {
     if (this.pagenb !== 3) {
       this.pagenb++;
       this.contentnumber++;
-      this.renderPage();
     }
   }
 
-  renderPage(): void {
-    document.getElementById('firstquarter').style.backgroundImage =
-      'url(../assets/images/desktop-image-hero-' + this.pagenb + '.jpg)';
+  renderBackground(): object {
+    return this.imageType === 'desktop'
+      ? {
+          'background-image':
+            'url(../assets/images/' +
+            this.imageType +
+            '-image-hero-' +
+            this.pagenb +
+            '.jpg)'
+        }
+      : {
+          'background-image':
+            'url(../assets/images/' +
+            this.imageType +
+            '-image-hero-' +
+            this.pagenb +
+            '.jpg)',
+          width: '100vw',
+          height: '360px'
+        };
+  }
+
+  updateImageType(): void {
+    if (window.innerWidth < 376) {
+      this.imageType = 'mobile';
+    } else {
+      this.imageType = 'desktop';
+    }
+  }
+
+  ngOnInit(): void {
+    this.updateImageType();
+    window.onresize = () => {
+      this.updateImageType();
+    };
   }
 }

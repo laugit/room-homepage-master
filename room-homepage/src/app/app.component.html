@@ -1,6 +1,6 @@
 <div id="wholepage">
-  <mat-grid-list id="gridlist" cols="10" rowHeight="267px" [gutterSize]="'0px'">
-    <mat-grid-tile id="firstquarter" colspan="6" rowspan="2">
+  <mat-grid-list *ngIf="imageType === 'desktop'" id="gridlist" cols="10" rowHeight="267px" [gutterSize]="'0px'">
+    <mat-grid-tile [ngStyle]="renderBackground()" id="firstquarter" colspan="6" rowspan="2">
       <div id="navdiv">
         <nav class="navbar navbar-expand-lg">
           <div class="navbar-brand" id="roomdiv">room</div>
@@ -82,4 +82,14 @@
     </mat-grid-tile>
     <mat-grid-tile id="fifthquarter" colspan="3" rowspan="1"></mat-grid-tile>
   </mat-grid-list>
+  <div *ngIf="imageType === 'mobile'">
+    <div id="firstquarter" [ngStyle]="renderBackground()">
+      <div id="navdiv">
+        <nav id="navbarmob" class="navbar navbar-expand">
+          <div class="navbar-brand"><img src="../assets/images/icon-hamburger.svg"></div>
+          <div id="roommob" class="nav-item active"><h5>room</h5></div>
+        </nav>
+      </div>
+    </div>
+  </div>
 </div>
