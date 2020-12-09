@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   pagenb = 1;
   contentnumber = 0;
   imageType = '';
+  mobileNavActivated = false;
 
   secondContent = [
     {
@@ -60,7 +61,7 @@ export class AppComponent implements OnInit {
             '-image-hero-' +
             this.pagenb +
             '.jpg)',
-          width: '100vw',
+          width: '100%',
           height: '360px'
         };
   }

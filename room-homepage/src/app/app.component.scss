@@ -73,15 +73,28 @@
   overflow: auto;
   margin: 0;
   padding: 0;
+  z-index: 1;
+}
+
+#mobilepage {
+  width: 375px;
 }
 
 #gridlist {
-  width: 100%;
+  width: 1440px;
 }
 
-#firstquarter {
+#firstquarter,
+#mobfirstquarter {
   background-size: 100% 100%;
   background-repeat: no-repeat;
+}
+
+#mobfirstquarter {
+  position: relative;
+  width: 375px;
+  margin: 0;
+  padding: 0;
 }
 
 #navdiv {
@@ -91,6 +104,16 @@
   font-family: "Spartan";
   font-size: 12px;
   margin-right: 75%;
+}
+
+#mobnavdiv {
+  width: 100%;
+  height: 20%;
+  color: hsl(0, 0%, 100%);
+  font-family: "Spartan";
+  font-size: 12px;
+  margin-right: 75%;
+  padding-top: 6%;
 }
 
 #roomdiv {
@@ -116,9 +139,27 @@
   font-weight: 700;
 }
 
-#seccontent {
-  width: 70%;
+#seccontent,
+#mobseccontent {
   height: 50%;
+}
+
+#seccontent {
+  width: 85%;
+}
+
+#mobseccontent,
+#thirdmobcontent {
+  padding-top: 15%;
+  padding-bottom: 12%;
+}
+
+#mobseccontent {
+  width: 87%;
+}
+
+#thirdmobcontent {
+  width: 100%;
 }
 
 #seccontentarrows {
@@ -132,20 +173,32 @@
   color: hsl(0, 0%, 63%);
 }
 
+#shopnowmob {
+  padding-top: 2%;
+}
+
 #description,
 #thirddescr {
   color: hsl(0, 0%, 63%);
 }
 
+#mobarrowleft,
+#mobarrowright,
 #divarrowleft,
 #divarrowright {
   background-color: black;
+}
+
+#divarrowleft,
+#divarrowright {
+  width: 72px;
   height: 72px;
-  width: 13.35%;
 }
 
 #divarrowleft:hover,
-#divarrowright:hover {
+#divarrowright:hover,
+#mobarrowleft:hover,
+#mobarrowright:hover {
   background-color: hsl(0, 0%, 27%);
 }
 
@@ -153,6 +206,12 @@
 #arrowright {
   padding-left: 37%;
   padding-top: 37%;
+}
+
+#mobrealarrowleft,
+#mobrealarrowright {
+  padding-left: 17%;
+  padding-top: 60%;
 }
 
 #thirdquarter {
@@ -165,8 +224,12 @@
 }
 
 #thirdcontent {
+  width: 84%;
+}
+
+#thirdcontent,
+#thirdmobcontent {
   height: 50%;
-  width: 82%;
 }
 
 #aboutcol {
@@ -184,7 +247,7 @@
 }
 
 #navbarmob {
-  width: 100vw;
+  width: 100%;
 }
 
 #roommob {
@@ -193,13 +256,96 @@
   margin-top: 3%;
 }
 
-a:link,
-a:active,
-a:visited {
+#mobarrowleft,
+#mobarrowright {
+  width: 52px;
+  height: 60px;
+}
+
+#mobarrowright {
+  margin-right: 4vw;
+}
+
+#mobcontentarrows {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+}
+
+#thirdmob,
+#thirdimg,
+#fifthmob,
+#fifthimg {
+  width: 375px;
+}
+
+#mobilenavbody {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 375px;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+}
+
+#mobilenavheader {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: hsl(0, 0%, 100%);
+  opacity: 1;
+  width: 375px;
+  height: 17vh;
+  font-family: "Spartan";
+  font-weight: 600;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+#mobhome,
+#mobshop,
+#mobabout {
+  margin-top: 7vh;
+  margin-right: 7%;
+}
+
+#closeicon {
+  margin-left: 5%;
+  margin-right: 20%;
+  margin-top: 7vh;
+}
+
+#mobcontact {
+  margin-top: 7vh;
+}
+
+#mobseccontent a:hover,
+#secondquarter a:hover {
+  text-decoration: none;
+}
+
+#navdiv a:link,
+#navdiv a:active,
+#navdiv a:visited {
   color: hsl(0, 0%, 100%);
   text-decoration: none;
 }
 
-a:hover {
+#mobilenavheader a:link,
+#mobilenavheader a:active,
+#mobilenavheader a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#navdiv a:hover,
+#mobilenavheader a:hover {
   text-decoration: underline;
 }
